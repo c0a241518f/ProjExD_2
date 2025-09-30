@@ -81,6 +81,7 @@ def get_kk_imgs() -> dict[tuple[int, int], pg.Surface]: #機能３
         (0,+5): pg.transform.rotozoom(pg.transform.flip(kk_img, True, False), -90, 1.0), # 下
         (+5,+5): pg.transform.rotozoom(pg.transform.flip(kk_img, True, False), -45, 1.0), # 右下
     }
+    
     return kk_dict
 
 def main():
@@ -114,7 +115,7 @@ def main():
         avx = vx*bb_accs[min(tmr//500, 9)]
         avy = vy*bb_accs[min(tmr//500, 9)]
         bb_img = bb_imgs[min(tmr//500, 9)]
-        bb_img.set_colorkey((0, 0, 0)) #四隅の黒い部分をなくす
+        bb_img.set_colorkey((0, 0, 0))
 
         key_lst = pg.key.get_pressed()
         sum_mv = [0, 0]
