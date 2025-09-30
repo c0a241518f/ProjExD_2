@@ -64,7 +64,11 @@ def init_bb_imgs() -> tuple[list[pg.Surface]]: #機能２
     return bb_imgs, bb_accs
 
 
-def get_kk_imgs() -> dict[tuple[int, int], pg.Surface]:
+def get_kk_imgs() -> dict[tuple[int, int], pg.Surface]: #機能３
+    """
+    引数：なし
+    戻り値：押下キーに対する移動量の合計値タプルをキー，rotozoomしたこうかとん画像のSurfaceを値とした辞書
+    """
     kk_img = pg.image.load("fig/3.png")
     kk_dict = {
         (0, 0): pg.transform.rotozoom(kk_img, 0, 1.0), # キー押下がない場合
@@ -95,8 +99,8 @@ def main():
     vx, vy = +5, +5 #爆弾の速度
     clock = pg.time.Clock()
     tmr = 0
-    bb_imgs, bb_accs = init_bb_imgs()
-    kk_imgs = get_kk_imgs()
+    bb_imgs, bb_accs = init_bb_imgs() # 機能２のリスト２つを所得
+    kk_imgs = get_kk_imgs() #機能３の辞書取得
 
     while True:
         for event in pg.event.get():
