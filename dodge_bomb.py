@@ -42,14 +42,12 @@ def gameover(screen: pg.Surface) -> None: #機能１
     txt_rct = txt.get_rect()
     txt_rct.center = WIDTH/2, HEIGHT/2
     bg_img.blit(txt, txt_rct)
-    kk1_img = pg.image.load("fig/8.png") 
-    kk2_img = pg.image.load("fig/8.png")#泣いてるこうかとん画像のロード
+    kk1_img = pg.image.load("fig/8.png") #泣いてるこうかとん画像のロード
     bg_img.blit(kk1_img, [350,280])
-    bg_img.blit(kk2_img, [720,280])
+    bg_img.blit(kk1_img, [720,280])
     screen.blit(bg_img, [0, 0]) #スクリーンにゲームオーバー画面を描写
     pg.display.update()
     time.sleep(5) #５秒間表示
-
 
 
 
